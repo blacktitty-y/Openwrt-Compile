@@ -61,5 +61,4 @@ make -j1 V=s
 make -j$(($(nproc) + 1)) V=s
 "
 
-
 rm -rf ./tmp && rm -rf .config && make menuconfig
