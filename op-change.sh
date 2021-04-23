@@ -47,6 +47,8 @@ sed -i 's/root:/blacktitty:/g' lede/package/lean/default-settings/files/zzz-defa
 sed -i 's/value="<%=duser%>" //g' lede/package/lean/luci-theme-argon/luasrc/view/themes/argon/sysauth.htm
 sed -i "s/'luci_password'/'luci_username'/g" lede/package/lean/luci-theme-argon/luasrc/view/themes/argon/sysauth.htm
 
+# 添加docker-compose的支持
+sed -i 's/LUCI_DEPENDS:=/LUCI_DEPENDS:=+docker-compose /g' lede/package/lean/luci-app-docker/Makefile
 
 # 开始编译
 cd lede
