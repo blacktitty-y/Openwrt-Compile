@@ -24,12 +24,12 @@ sed -i 's/+luci-theme-bootstrap/+luci-theme-argon/g' lede/feeds/luci/collections
 # 网络共享添加新增用户支持
 sed -i 's/LUCI_DEPENDS:=/LUCI_DEPENDS:=+ksmbd-utils /g' lede/package/lean/luci-app-cifsd/Makefile
 
-# 修改默认配置 目前编译luci-app-docker跑容器也会出错 暂时用别的docker方案
+# 修改默认配置
 sed -i 's/autosamba //g;s/luci-app-ipsec-vpnd //g;s/luci-app-zerotier luci-app-xlnetacc //g' lede/target/linux/x86/Makefile
 sed -i 's/ luci / luci-ssl-nginx /g;s/luci-app-autoreboot luci-app-webadmin //g;s/luci-app-filetransfer //g;s/luci-app-sfe //g;s/luci-app-unblockmusic //g;s/luci-app-vlmcsd //g' lede/include/target.mk
 sed -i '/ddns-scripts_aliyun ddns-scripts_dnspod/a luci-app-softethervpn luci-app-transmission  luci-app-serverchan' lede/include/target.mk
 sed -i '/ddns-scripts_aliyun ddns-scripts_dnspod/a luci-app-oaf luci-app-openclash luci-app-qbittorrent luci-app-passwall luci-app-rclone \\' lede/include/target.mk
-sed -i '/ddns-scripts_aliyun ddns-scripts_dnspod/a luci-app-cifs-mount luci-app-cifsd luci-app-hd-idle luci-app-dockerman luci-app-nfs \\' lede/include/target.mk
+sed -i '/ddns-scripts_aliyun ddns-scripts_dnspod/a luci-app-cifs-mount luci-app-cifsd luci-app-hd-idle luci-app-docker luci-app-nfs \\' lede/include/target.mk
 sed -i '/ddns-scripts_aliyun ddns-scripts_dnspod/a luci-app-adguardhome luci-app-amule luci-app-argon-config luci-app-aria2 \\' lede/include/target.mk
 sed -i 's/ddns-scripts_aliyun ddns-scripts_dnspod/ddns-scripts_aliyun ddns-scripts_cloudflare.com-v4 ddns-scripts_dnspod \\/g' lede/include/target.mk
 
