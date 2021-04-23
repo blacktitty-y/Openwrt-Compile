@@ -52,9 +52,6 @@ sed -i "s/'luci_password'/'luci_username'/g" lede/package/lean/luci-theme-argon/
 cd lede
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
-# 新的docker方案 并且添加了docker-compose的支持
-cd package/lean && rm -rf luci-lib-docker && git clone https://github.com/blacktitty-y/luci-app-dockerman.git && git clone https://github.com/blacktitty-y/luci-lib-docker.git && cd -
-
 echo "
 首次用:
 make -j8 download V=s
