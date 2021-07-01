@@ -52,8 +52,7 @@ sed -i 's/user root/user blacktitty root/g' feeds/packages/net/nginx-util/files/
 sed -i 's/root:/blacktitty:/g' package/lean/default-settings/files/zzz-default-settings
 
 # 网页去掉默认用户名
-sed -i 's/value="<%=duser%>" //g' package/lean/luci-theme-argon/luasrc/view/themes/argon/sysauth.htm
-sed -i "s/'luci_password'/'luci_username'/g" package/lean/luci-theme-argon/luasrc/view/themes/argon/sysauth.htm
+sed -i "s/value=\"<%=duser%>\" //g;s/'luci_password'/'luci_username'/g" /home/tim/lede/package/lean/luci-theme-argon/luasrc/view/themes/argon/sysauth.htm
 
 # 添加docker-compose的支持
 sed -i 's/LUCI_DEPENDS:=/LUCI_DEPENDS:=+docker-compose /g' package/lean/luci-app-docker/Makefile
